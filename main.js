@@ -16,6 +16,8 @@ function animator() {
     }}, 16);
 }
 
+animator();
+
 function reload() {
     window.location.reload(false); 
 }
