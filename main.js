@@ -5,20 +5,19 @@ var windowWidth = window.innerWidth;
 var rectWidth = rect.clientWidth;
 var stopValue = (windowWidth - rectWidth); 
 var increaser = 1;
-var setter;
 function animator() {
-    setter = setInterval(function(){
+    setInterval(function(){
     if (startValue === stopValue) {
         stopValue = 0;
         increaser = -1;
     } else {
         startValue += increaser;
         rects.style.marginLeft = startValue + 'px';
-    }}, 16);    
+    }}, 16);
 }
 
-function play() {
-    
+function reload() {
+    window.location.reload(false); 
 }
 
 function toggleBars() {
