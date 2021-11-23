@@ -10,7 +10,7 @@
 .bars {
     background: linear-gradient(90deg, #fff 50%, #000 50%);
 }
-.rectangles {
+.rectangle {
     position: absolute;
     width: 80px;
     height: 40px;

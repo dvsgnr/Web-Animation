@@ -1,22 +1,28 @@
-var rects = document.querySelector("#container");
-var rect = document.querySelector(".rectangles");
-var startValue = 0;
+var rectangles = document.querySelector("#container");
+var rectangle = document.querySelector(".rectangle");
+var positionX = 0;
 var windowWidth = window.innerWidth;
-var rectWidth = rect.clientWidth;
+var rectWidth = rectangle.clientWidth;
 var stopValue = (windowWidth - rectWidth); 
-var increaser = 1;
+const steps = 1;
+const timer = 16;
+let intervID;
 function animator() {
-    setInterval(function(){
-    if (startValue === stopValue) {
+    intervID = setInterval(function(){
+    if (positionX === stopValue) {
         stopValue = 0;
-        increaser = -1;
+        steps = -1;
     } else {
-        startValue += increaser;
-        rects.style.marginLeft = startValue + 'px';
-    }}, 16);
+        positionX += steps;
+        rectangles.style.marginLeft = positionX + 'px';
+    }}, timer);
 }
 
 animator();
+
+function pauseAnimation() {
+    clearInterval(intervID);
+}
 
 function reload() {
     window.location.reload(false); 
