@@ -2,11 +2,12 @@ var rectangles = document.querySelector("#container");
 var rectangle = document.querySelector(".rectangle");
 var positionX = 0;
 var windowWidth = window.innerWidth;
-var rectWidth = rectangle.clientWidth;
-var stopValue = (windowWidth - rectWidth); 
-const steps = 1;
-const timer = 16;
+var rectangleWidth = rectangle.clientWidth;
+var stopValue = (windowWidth - rectangleWidth); 
+let steps = 1;
+const timer = 10;
 let intervID;
+
 function animator() {
     intervID = setInterval(function(){
     if (positionX === stopValue) {
@@ -23,6 +24,12 @@ animator();
 function pauseAnimation() {
     clearInterval(intervID);
 }
+ 
+document.addEventListener('keydown', function(e) {
+    if (e.code === 'Space') {   
+        clearInterval(intervID);
+    }
+})
 
 function reload() {
     window.location.reload(false); 
