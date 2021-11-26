@@ -19,20 +19,24 @@ function animator() {
     }}, timer);
 }
 
+function pauseButton() {
+    clearInterval(intervID);
+}
+
 animator();
 
 function pauseAnimation() {
-    clearInterval(intervID);
-}
- 
-document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function(e) {
     if (e.code === 'Space') {   
         clearInterval(intervID);
     }
 })
+}
+
+pauseAnimation();
 
 function reload() {
-    window.location.reload(false); 
+    window.location.reload(false);
 }
 
 function toggleBars() {
