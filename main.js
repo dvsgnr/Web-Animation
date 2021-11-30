@@ -5,7 +5,7 @@ var windowWidth = window.innerWidth;
 var rectangleWidth = rectangle.clientWidth;
 var stopValue = (windowWidth - rectangleWidth); 
 let steps = 1;
-const timer = 10;
+const timer = 16;
 let intervID;
 
 function animator() {
@@ -19,15 +19,15 @@ function animator() {
     }}, timer);
 }
 
+animator();
+
 function pauseButton() {
     clearInterval(intervID);
 }
 
-animator();
-
 function pauseAnimation() {
     document.addEventListener('keydown', function(e) {
-    if (e.code === 'Space') {   
+    if (e.code === 'Space') {
         clearInterval(intervID);
     }
 })
